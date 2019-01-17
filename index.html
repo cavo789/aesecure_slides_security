@@ -1,0 +1,1057 @@
+<!DOCTYPE HTML>
+<html lang="fr-fr" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Christophe Avonture" />
+    <meta name="designer" content="Christophe Avonture" />
+    <meta name="keywords" content="Christophe Avonture, Slides, aeSecure, S&eacute;curit&eacute; des sites Joomla!®" />
+    <meta name="description" content="Comment sécuriser son site web Joomla!®, quelles mesures prendre pour accroître la sécurisation du site, éviter les virus et en détecter la présence ?" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@aesecure" />
+    <meta name="twitter:title" content="aeSecure, optimisation et sécurisation de vos sites web Apache" />
+    <meta property="og:url" content="https://www.avonture.be/aesecure_slides_security/index.html" />
+    <meta property="fb:app_id" content="277546802408059" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://www.avonture.be/aesecure_slides_security/img/social_intro.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="522" />
+    <meta property="og:title" content="aeSecure - Sécurité des sites Joomla!®" />
+    <meta property="og:site_name" content="Slides | aeSecure.com" />
+    <meta property="og:description" content="Comment sécuriser son site web Joomla!®, quelles mesures prendre pour accroître la sécurisation du site, éviter les virus et en détecter la présence ?" />
+
+    <title>aeSecure - S&eacute;curit&eacute; des sites Joomla!®</title>
+
+    <link href="data:image/x-icon;base64,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"
+        rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/beige.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <style>
+        em {
+            background-color: #f0f5a1;
+            color: red;
+            font-weight: bold;
+            font-style: normal !important;
+        }
+
+        .info {
+            color: maroon;
+            font-size: smaller;
+            font-style: italic;
+        }
+
+        .blink {
+            animation: blink 1s steps(5, start) infinite;
+            -webkit-animation: blink 1s steps(5, start) infinite;
+        }
+
+        @keyframes blink {
+            to {
+                visibility: hidden;
+            }
+        }
+
+        @-webkit-keyframes blink {
+            to {
+                visibility: hidden;
+            }
+        }
+
+        .joomla_folder small {
+            display: inline;
+            text-align: left;
+        }
+
+        .img_joomla {
+            float: right;
+            max-height: 350px;
+            margin-left: 20px !important;
+        }
+
+        .img_left {
+            float: left;
+            max-height: 350px;
+            margin-right: 20px !important;
+        }
+
+        .red {
+            background-color: red;
+            color: white;
+        }
+
+        .orange {
+            background-color: orange;
+            color: white;
+        }
+
+        .green {
+            background-color: green;
+            color: white;
+            padding: 15px !important;
+        }
+
+        .green a {
+            color: white !important;
+            text-decoration: underline;
+        }
+
+        .yellow {
+            background-color: yellow;
+            color: orange;
+        }
+
+        .cinnk {
+            background-color: #b53f37;
+            padding: 20px !important;
+            border: solid 4px orange !important;
+            color: white !important;
+        }
+
+        .cinnk a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .danger {
+            background-color: red;
+            font-weight: bold;
+            color: white;
+            font-weight: bolder;
+        }
+
+        .warning {
+            font-weight: bold;
+            background-color: orange;
+            color: white;
+        }
+
+        .odd {
+            color: #8b743d;
+        }
+
+        .even {
+            color: #c0a86e;
+        }
+
+        #logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: auto;
+            max-width: 150px;
+            display: none;
+        }
+
+        #top_right {
+            position: absolute;
+            top: 10px;
+            right: 0px;
+        }
+
+        /* Nono's color */
+
+        .reveal .controls .navigate-left,
+        .reveal .controls .navigate-left.enabled {
+            border-right-color: #B9312C;
+        }
+
+        .reveal .controls .navigate-right,
+        .reveal .controls .navigate-right.enabled {
+            border-left-color: #B9312C;
+        }
+
+        .reveal .controls .navigate-up,
+        .reveal .controls .navigate-up.enabled {
+            border-bottom-color: #B9312C;
+        }
+
+        .reveal .controls .navigate-down,
+        .reveal .controls .navigate-down.enabled {
+            border-top-color: #B9312C;
+        }
+
+        /* Horizontal menu */
+
+        #menu {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 9;
+            display: none;
+            font-size: 1.4em;
+        }
+
+        #menu nav,
+        header#menu nav ul,
+        header#menu nav ul li,
+        header#menu nav ul li a {
+            height: 30px;
+        }
+
+        #menu nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #menu nav ul li {
+            display: block;
+            float: left;
+        }
+
+        html.img-left div.slide-background.present {
+            background-position: left;
+        }
+    </style>
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match('/print-pdf/gi') ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+
+    </script>
+</head>
+
+<body>
+
+    <header id="menu">
+        <nav>
+            <ul class="curly-link">
+                <li><a href="#/intro" title="Accueil">Accueil</a>&nbsp;-&nbsp;</li>
+                <li><a href="#/objectifs" title="Objectifs de cette présentation">Objectifs</a>&nbsp;-&nbsp;</li>
+                <li><a href="#/video" title="Vidéo en ligne">Vidéo</a>&nbsp;-&nbsp;</li>
+                <li><a href="#/travailler" title="1. Travailler de manière sécurisée">1. Travailler</a>&nbsp;-&nbsp;</li>
+                <li><a href="#/preparer" title="2. Préparer son environnement de travail afin qu'il soit sécurisé">2.
+                        Préparer</a>&nbsp;-&nbsp;</li>
+                <li><a href="#/securiser" title="3. Comment sécuriser son site web">3. Sécuriser</a>&nbsp;-&nbsp;</li>
+                <li><a href="#/identifier" title="4. Comment identifier des hacks sur son site web">4. Identitifier</a>&nbsp;-&nbsp;</li>
+                <li><a href="#/nettoyer" title="5. Nettoyer un site hacké">5. Nettoyer</a>&nbsp;-&nbsp;</li>
+                <li><a href="#/eveil" title="Être éveillé">6. Être éveillé</a>&nbsp;-&nbsp;</li>
+                <li><a href="#/contact" title="Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+
+            <!-- section data-background="img/homepage.png"> Homepage
+               <p>&nbsp;</p>
+            </section> -->
+
+            <section id="intro" data-transition="zoom">
+                <!-- Sécurité des sites Joomla!® v1 -->
+                <h1>aeSecure - S&eacute;curit&eacute; des sites Joomla!®</h1>
+                <small>v1 13/12/2016</small>
+                <p>
+                    <small><a href="https://www.aesecure.com" target="_blank" rel="noopener noreferrer">Christophe
+                            Avonture</a> / <a href="https://www.facebook.com/aesecure" target="_blank" rel="nofollow noopener noreferrer">fanpage</a>
+                        / <a href="http://twitter.com/aesecure" target="_blank" rel="nofollow noopener noreferrer">@aesecure</a></small>
+                </p>
+            </section>
+
+            <section id="raccourcis">
+                <h2>Raccourcis clavier</h2>
+                <table>
+                    <tr>
+                        <td><b>Prochain slide</b></td>
+                        <td>Touche d'espacement</td>
+                    </tr>
+                    <tr>
+                        <td><b>Se déplacer</b></td>
+                        <td><span class="key">←</span>, <span class="key">→</span>, <span class="key">↓</span> et <span
+                                class="key">↑</span></td>
+                    </tr>
+                    <tr>
+                        <td><b>Plein écran</b></td>
+                        <td>F</td>
+                    </tr>
+                    <tr>
+                        <td><b>Commentaires</b></td>
+                        <td>S</td>
+                    </tr>
+                    <tr>
+                        <td><b>Voir les vignettes</b></td>
+                        <td>Esc</td>
+                    </tr>
+                </table>
+                <hr />
+                <p>Vous pouvez aussi utiliser la roulette de votre souris pour afficher le prochain slide.</p>
+                <aside class="notes">
+                    <p>Bravo, vous venez d'afficher les commentaires.</p>
+                </aside>
+            </section>
+
+            <section id="qui-suis-je">
+                <!-- Qui suis-je ?-->
+                <h2>Qui suis-je ?</h2>
+                <img alt="Christophe Avonture - Qui suis-je ?" src="img/blank.png" width="200" height="189" data-src="img/christophe-avonture.jpg" />
+                <ul>
+                    <li>Développeur d’<a href="https://www.aesecure.com/" target="_blank" rel="noopener noreferrer">aeSecure</a>,
+                        solution de <strong>sécurisation</strong>, d’<strong>optimisation</strong> et de <strong>nettoyage
+                            de sites</strong> web
+                        Apache
+                    </li>
+                    <li>Administrateur <a href="https://forum.joomla.fr/" target="_blank" rel="nofollow noopener noreferrer">Joomla!
+                            France</a> (<a href="https://forum.joomla.fr/member.php?38299-cavo789&amp;tab=aboutme"
+                            target="_blank" rel="noopener noreferrer">cavo789</a>)</li>
+                    <li>Membre fondateur de la <a href="https://www.jugwallonie.be/" target="_blank" rel="nofollow noopener noreferrer">JUG!
+                            Wallonie</a></li>
+                </ul>
+            </section>
+            <!-- Qui suis-je ?-->
+
+            <section id="download">
+                <!-- Download -->
+                <h2>Télécharger cette présentation</h2>
+                <p>Cette présentation est téléchargeable pour lecture en mode offline et/ou afin d'en simplifier son
+                    impression&nbsp;: <a href="aesecure_securite_joomla.pdf">format pdf</a></p>
+            </section>
+            <!-- Download -->
+
+            <section id="video" data-background-video="https://www.youtube.com/watch?v=UZxIDQRwH88&amp;t=415"
+                data-background-color="#f1f1f1">
+                <!-- Video -->
+                <h2>Vidéo en ligne</h2>
+                <a href="https://www.youtube.com/watch?v=UZxIDQRwH88&amp;t=415" target="_blank" rel="nofollow noopener noreferrer"><img
+                        src="img/blank.png" alt="video" data-src="img/video.png" height="300" /></a>
+                <a href="https://www.youtube.com/watch?v=UZxIDQRwH88&amp;t=415" target="_blank" rel="nofollow noopener noreferrer">https://www.youtube.com/watch?v=UZxIDQRwH88&amp;t=415</a>
+                <div style="font-size:0.6em;margin:10px;">Conférence enregistrée le 13 décembre, à l'initiative de <a
+                        href="http://cinnk.com" target="_blank" rel="noopener noreferrer" title="CINNK | Formation Joomla! - Maintenance, Tutoriels et documentations">CINNK.com</a></div>
+            </section>
+            <!-- Video -->
+
+            <section id="objectifs">
+                <!-- Objectifs de cette présentation -->
+                <h2>Objectifs de cette présentation</h2>
+                <h5 class="cinnk">En collaboration avec <a href="http://cinnk.com" target="_blank" rel="noopener noreferrer"
+                        title="CINNK | Formation Joomla! - Maintenance, Tutoriels et documentations">Cinnk.com</a></h5>
+                <ol>
+                    <li>Travailler de manière sécurisée,</li>
+                    <li>Préparer son environnement de travail afin qu'il soit sécurisé,</li>
+                    <li>Comment sécuriser son site web,</li>
+                    <li>Comment identifier des hacks sur son site web,</li>
+                    <li>Nettoyer un site hacké</li>
+                </ol>
+            </section>
+            <!-- Objectifs de cette présentation + Aller plus loin + Remarques -->
+
+            <section>
+                <!-- 1. Travailler de manière sécurisée -->
+                <section id="travailler">
+                    <!-- Travailler de manière sécurisée -->
+                    <h2>1. Travailler de manière sécurisée</h2>
+                    <p><em>10 protections de base pour sécuriser son site Joomla!</em>&nbsp;:: <a href="http://cinnk.com/magazine/mai-2016/690-10-protections-de-base-pour-securiser-son-site-joomla"
+                            title="10 protections de base pour sécuriser son site Joomla!" target="_blank" rel="noopener noreferrer">http://cinnk.com/magazine/mai-2016/690-10-protections-de-base-pour-securiser-son-site-joomla</a></p>
+                </section>
+                <!-- Travailler de manière sécurisée -->
+                <section id="travailler_1-1_hebergeur">
+                    <!-- 1.1 Choisir un hébergeur de qualité -->
+                    <h2>1.1. Choisir un hébergeur de qualité</h2>
+                    <p>N'optez pas pour le moins cher, pour celui d'un ami, proche de chez vous géographiquement, ...
+                        mais pour celui qui vous assure un suivi constant de ses serveurs (<em>versions PHP</em>, <em>disques
+                            SSD</em>, ...), celui qui prend
+                        des <em>backups</em> de votre site, ...</p>
+                    <p><em>Et surtout!, un hébergeur pro-actif et qui réponds à vos demandes de support</em></p>
+                </section>
+                <!-- 1.1 Choisir un hébergeur de qualité -->
+                <section id="travailler_1-2-un_site">
+                    <!-- 1.2 Un seul site par hébergement -->
+                    <h2>1.2. Un seul site par hébergement</h2>
+                    <p>En principe&nbsp;: un client = un hébergement = un serveur FTP</p>
+                    <p class="info">Cas vécu personnellement&nbsp;: "Monsieur aeSecure, mon site a été hacké,
+                        pourriez-vous m'aider ?". <em>Et là, horreur, 48 sites sur le même FTP</em> (/site1, /site2,
+                        ... /site48).</p>
+                    <p class="fragment" style="margin:50px;padding:30px;color:red;font-size:1em;border:1px solid red;">Un
+                        virus dans /site1 pouvant se propager partout, ce n'est donc pas un site à traiter mais 48 et
+                        <span style="text-decoration:underline;">en une fois sinon le /site1 ayant été nettoyé peut
+                            être à nouveau contaminé par /site48</span></p>
+                </section>
+                <!-- 1.2 Un seul site par hébergement -->
+                <section id="travailler_1-2-un_site_b">
+                    <!-- 1.2 Un seul site par hébergement -->
+                    <h2>1.2. Un seul site - Complément</h2>
+                    <p>Ne conservez pas d'anciennes versions de votre site (<em>/_vieux_sites</em>) sur votre FTP, cela
+                        ne sert à rien du tout.</p>
+                    <p style="font-size:0.8em;">Vous augmentez très considérablement la surface d'attaque avec des
+                        sites / programmes qui ne seront plus jamais mis à jour</p>
+                    <p style="margin:50px;color:red;font-style:italic;"><small>J'ai déjà retrouvé un Joomla 1.0 p.ex.
+                            alors que le site de production était en J3.6.x</small></p>
+                    <p class="red fragment">Téléchargez sur votre ordinateur les vieux sites, les tests, les démos, ...
+                        et supprimez-les de la production</p>
+                </section>
+                <!-- 1.2 Un seul site par hébergement -->
+                <section id="travailler_1-3-password">
+                    <!-- 1.3 Gestion des mots de passe -->
+                    <h2>1.3. Gestion des mots de passe</h2>
+                    <p>A titre personnel, j'utilise depuis plusieurs années <a href="https://www.lastpass.com/fr"
+                            target="_blank" rel="noopener noreferrer" title="Lastpass...">LastPass</a> qui est un
+                        "coffre-fort", un gestionnaire de mot de passe.</p>
+                    <p><em>Hormis deux ou trois mots de passe, je ne connais pas les centaines d'autres que j'utilise
+                            qui sont à usage unique.</em></p>
+                    <p>Lire plus&nbsp;: <a href="https://www.aesecure.com/fr/blog/60-bien-choisir-son-mot-de-passe.html"
+                            target="_blank" title="Et vous, c'est quoi votre couple login-mot de passe ?">https://www.aesecure.com/fr/blog/60-bien-choisir-son-mot-de-passe.html</a></p>
+                </section>
+                <!-- 1.3 Gestion des mots de passe -->
+                <section id="travailler_1-4-ordinateur">
+                    <!-- 1.4 Protégez votre propre ordinateur -->
+                    <h2>1.4. Protégez votre propre ordinateur</h2>
+                    <p>Même sous Mac ! Ayez un antivirus à jour et gardez-vous d’utiliser certains logiciels dont la
+                        sécurité est défaillante, comme le réputé FileZilla qui stocke en clair les accès FTP dans un
+                        fichier xml, préférez par exemple <em>WinSCP</em> (Windows) ou <em>CyberDuck</em> (Mac) ; pour
+                        n’en citer que deux.</p>
+                </section>
+                <!-- 1.4 Protégez votre propre ordinateur -->
+                <section id="travailler_1-5-attention">
+                    <!-- 1.5 Soyez attentif -->
+                    <h2>1.5 Soyez attentif</h2>
+                    <ul>
+                        <li class="fragment">N'utilisez pas d'anciens navigateurs démodés <br /><em style="font-size:0.8em;">[/Private
+                                Joke]Qui utilise encore Internet Explorer?[/Private Joke],</em></li>
+                        <li class="fragment">Avez-vous besoin du player Flash ? Non, supprimez-le de votre navigateur
+                            !,</li>
+                        <li class="fragment">... et java ?,</li>
+                        <li class="fragment">Sur un WIFI public, utilisez obligatoirement un VPN privé (par exemple <a
+                                href="https://www.hidemyass.com/fr/" target="_blank" rel="noopener noreferrer" title="Service VPN | Hide My Ass!">HideMyAss</a>),</li>
+                        <li class="fragment">...</li>
+                    </ul>
+                </section>
+                <!-- 1.5 Soyez attentif -->
+            </section>
+            <!-- 1. Travailler de manière sécurisée -->
+
+            <section>
+                <!-- 2. Préparer son environnement de travail afin qu'il soit sécurisé -->
+                <section id="preparer">
+                    <!-- 2. Préparer son environnement de travail afin qu'il soit sécurisé -->
+                    <h2>2. Préparer son environnement de travail afin qu'il soit sécurisé</h2>
+                </section>
+                <section id="preparer_2-1_propre">
+                    <!-- 2.1 Un ordinateur propre -->
+                    <h2>2.1. Un ordinateur propre</h2>
+                    <ul>
+                        <li>Ayez un <em>antivirus</em>, actif en tâche de fond et scanner régulièrement votre
+                            ordinateur. But&nbsp;: zéro virus,</li>
+                        <li>Ayez un <em>antimalware</em> et évitez aussi d'avoir ce type de bestioles,</li>
+                        <li>N'installez que le strict nécessaire pour votre navigateur&nbsp;: pas de compléments (<em>addons</em>)
+                            exotiques et superflu,</li>
+                        <li>Mode ultime&nbsp;: administrez vos sites depuis une <em>fenêtre protégée</em> (exemple
+                            Avast SafeZone Browser),</li>
+                        <li>...</li>
+                    </ul>
+                </section>
+                <!-- 2.1 Un ordinateur propre -->
+                <section id="preparer_2-2_ftp">
+                    <!-- 2.2 Un client FTP sécurisé -->
+                    <h2>2.2. Un client FTP sécurisé</h2>
+                    <p>Si vous utilisez FileZilla, vérifier plutôt deux fois qu'une que vos données de connexion ne
+                        sont pas stockées dans un fichier .xml non crypté car sinon un hackeur qui aurait accès à votre
+                        disque dur aurait de fait accès à ce fichier
+                        .xml
+                    </p>
+                    <p style="font-style:italic;">Personnellement, étant sous Windows, j'utilise WinSCP.</p>
+                </section>
+                <!-- 2.2 Un client FTP sécurisé -->
+                <section id="preparer_2-2_sftp">
+                    <!-- 2.3 Et préférez le SFTP si disponible -->
+                    <h2>2.3. Et préférez le SFTP si disponible</h2>
+                    <div>
+                        <p style="float:left;width:48%;">Si votre hébergeur vous le permet (si pas, changez-en!), <em>optez
+                                pour une connexion SFTP</em> où le login et le mot de passe ne transite pas en clair
+                            sur le réseau.</p>
+                        <img src="img/blank.png" alt="sftp" data-src="img/sftp.png" style="float:right;width:48%;" />
+                    </div>
+                </section>
+                <!-- 2.3 Et préférez le SFTP si disponible -->
+            </section>
+            <!-- 2. Préparer son environnement de travail afin qu'il soit sécurisé -->
+
+            <section>
+                <!-- 3. Comment sécuriser son site web -->
+                <section id="securiser">
+                    <!-- 3. Comment sécuriser son site web -->
+                    <h2>3. Comment sécuriser son site web</h2>
+                    <p><em>La sécurité et Joomla!®</em> pour apprendre à sécuriser votre site web&nbsp;: <a href="https://www.aesecure.com/fr/blog/joomla-securite.html"
+                            target="_blank" rel="noopener noreferrer">https://www.aesecure.com/fr/blog/joomla-securite.html</a></p>
+                </section>
+                <section id="securiser_3-1-recente">
+                    <!-- 3.1 Seulement les versions les plus récentes -->
+                    <h2>3.1. Seulement les versions les plus récentes</h2>
+                    <p>Ne créez pas un nouveau site sur une vieille version de Joomla!®, cela n'a aucun sens.
+                        Téléchargez <em>systématiquement la dernière version</em>.</p>
+                </section>
+                <!-- 3.1 Seulement les versions les plus récentes -->
+                <section id="securiser_3-2-strict_minimum">
+                    <!-- 3.2 Ne conservez que le strict minimum -->
+                    <h2>3.2. Ne conservez que le strict minimum</h2>
+                    <p>Ne conservez jamais des templates inutilisés, des composants dont vous n'avez plus besoin, ...
+                        Ils pourraient ne plus être mis à jour et contenir des failles qui se révèleront des portes
+                        d'entrée.</p>
+                    <p>Et faites cela régulièrement&nbsp;: <em>nettoyez</em>, <em style="font-size:1.2em;">nettoyez</em>,
+                        <em style="font-size:1.6em;font-weight:bold;">nettoyez</em>...</p>
+                </section>
+                <!-- 3.2 Ne conservez que le strict minimum -->
+                <section id="securiser_3-3-suivi">
+                    <!-- 3.3 Faites un suivi scrupuleux des versions -->
+                    <h2>3.3. Faites un suivi scrupuleux des versions (CMS, composants, plugins, ...)</h2>
+                    <p><em>Ne ratez aucune mise-à-jour de sécurité. AUCUNE !</em></p>
+                    <p class="fragment fade-up" style="font-size:1.4em;"><em>AUCUNE !!</em></p>
+                    <p class="fragment fade-up blink" style="font-size:2.4em;"><em>AUCUNE !!!</em></p>
+                </section>
+                <!-- 3.3 Faites un suivi scrupuleux des versions -->
+                <section id="securiser_3-4-suivi">
+                    <!-- 3.4 Utilisez un logiciel de supervision -->
+                    <h2>3.4. Utilisez un logiciel de supervision</h2>
+                    <p>Pour simplifier votre vie de gestionnaire, pour savoir quelles versions sont installées, pour
+                        mettre à jour vos sites, ... utilisez un système de supervision comme </p>
+                    <a href="https://watcful.li" title="Joomla upgrade | Joomla backup | Joomla website monitoring | Joomla update | Manage multiple Joomla websites"
+                        target="_blank" rel="noopener noreferrer nofollow">https://watchful.li</a>
+                    <p style="font-size:0.6em;">Voir aussi <a href="https://perfectdashboard.com/" title="Perfect Dashboard | Manage WordPress, Joomla & other websites"
+                            target="_blank" rel="noopener noreferrer nofollow">https://perfectdashboard.com/</a></p>
+                    <hr />
+                    <p class="fragment fade-up green"><small>aeSecure Pro multi-sites propose également une interface
+                            de surveillance de vos sites (version du CMS, de Apache, PHP et fonctionnalités d'aeSecure
+                            activées)</small></p>
+                </section>
+                <!-- 3.4 Utilisez un logiciel de supervision -->
+                <section id="securiser_3-5-firewall">
+                    <!-- 3.5 Installez un pare-feu -->
+                    <h2>3.5. Installez un pare-feu</h2>
+                    <div style="width:100%">
+                        <div style="width:49%;float:left;">
+                            Plus d'infos<br />
+                            <a href="https://www.aesecure.com/fr/" title="aeSecure, optimisation et sécurisation de vos sites web Apache"
+                                target="_blank">
+                                <img alt="aeSecure Logo" width="300" src="img/logo.png" style="border:none;padding:15px;" />
+                            </a>
+                        </div>
+                        <div style="width:49%;float:right;">
+                            Demo<br />
+                            <a href="https://www.aesecure.com/_demo/aesecure/setup.php?language=fr-FR" title="aeSecure, optimisation et sécurisation de vos sites web Apache"
+                                target="_blank">
+                                <img alt="aeSecure Logo" width="300" src="img/logo.png" style="border:none;padding:15px;" />
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- 3.5 Installez un pare-feu -->
+                <section id="securiser_3-6-setup">
+                    <!-- 3.6 Activez les sécurités de base et spécifiques à votre site -->
+                    <h2>3.6. Activez les sécurités de base et spécifiques à votre site</h2>
+                    <div style="font-size:0.8em;">
+                        <ul>
+                            <li class="fragment fade-up">Faites de l'<em>obfuscation</em> (activation SEF, bloquez
+                                certaines URLs (?tp=1), ...),</li>
+                            <li class="fragment fade-up">Gérer au plus fin les droits d'accès (<em>ACLs</em>) et les
+                                <em>chmods</em>,</li>
+                            <li class="fragment fade-up"><em>Protégez vos dossiers sensibles</em> (IP, .htpasswd, ...)
+                                et votre administration (Two factors Authentication, Yubikey, ...)</li>
+                            <li class="fragment fade-up"><em>Interdisez l'exécution de code PHP</em> dans certains
+                                dossiers,</li>
+                            <li class="fragment fade-up">...</li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- 3.6 Activez les sécurités de base et spécifiques à votre site -->
+                <section id="securiser_3-7-crontab">
+                    <!-- 3.7 Installez une tâche planifiée -->
+                    <h2>3.7. Installez une tâche planifiée</h2>
+                    <p>Si vous avez accès à un <em>crontab</em> chez votre hébergeur, planifiez des scripts d'analyse
+                        comme p.ex. un script qui <em>détecterait un fichier ayant été modifié et vous enverrait une
+                            alerte</em>, un script qui détecterait
+                        des <em>nouveaux utilisateurs</em> s'étant inscrit sur votre site, un script qui prendrait des
+                        <em>backups de votre base de données</em>, ...</p>
+                    <hr />
+                    <p class="fragment fade-up green"><small>aeSecure Pro fait cela...</small></p>
+                </section>
+                <!-- 3.7 Installez une tâche planifiée -->
+                <section id="securiser_3-8-backups">
+                    <!-- 3.8 Backups, backups, backups -->
+                    <h2>3.8. Backups, backups, backups</h2>
+                    <p>Idéalement à stocker ailleurs que chez votre hébergeur (imaginez un incendie ou que vous oubliez
+                        de payer votre renouvellement) et à tester de temps à autre pour garantir que le backup est
+                        complet (ne pas découvrir qu'il ne contient
+                        pas la base de données, ...) et que le fichier ne soit pas corrompu</p>
+                </section>
+                <!-- 3.8 Backups, backups, backups -->
+                <section id="securiser_3-9-https">
+                    <!-- 3.9 HTTPS-->
+                    <h2>3.9 HTTPS</h2>
+                    <p>Installez un certificat SSL pour sécuriser le transfert d'informations (p.ex. login/password)
+                        entre votre client et votre serveur. <em>SSL garanti que les échanges soient cryptés</em>.</p>
+                    Lire <a href="https://cinnk.com/joomla/3/tutoriels/le-https-facilement-sur-son-site-joomla" title="Le https facilement et gratuitement sur son site Joomla"
+                        target="_blank">https://cinnk.com/joomla/3/tutoriels/le-https-facilement-sur-son-site-joomla</a>
+                    <p class="orange" style="font-size:0.8em;">Si vous souhaitez tester la validité et la sécurité d'un
+                        certificat : <a href="https://www.ssllabs.com/ssltest/analyze.html" target="_blank" rel="nofollow noopener noreferrer"
+                            title="SSL Server Test (Powered by Qualys SSL Labs)">https://www.ssllabs.com/ssltest/analyze.html</a></p>
+                </section>
+                <!-- 3.9 HTTPS -->
+                <section id="securiser_3-10-pentest">
+                    <h2>3.10 Penetration test</h2>
+                    <div style="font-size:0.8em">
+                        <p>Il existe des outils qui permettent de tenter d'infiltrer des sites web càd de simulations
+                            d'attaques afin de voir comment ils se comportent : sont-ils failibles à une attaque XSS,
+                            cross site scripting, SQL injection, ...</p>
+                        <ul>
+                            <li><a href="https://github.com/laramies/theHarvester" target="_blank" rel="nofollow noopener noreferrer"
+                                    title="theHarvester is a tool for gathering e-mail accounts, subdomain names, virtual hosts, open ports/ banners, and employee names from different public sources (search engines, pgp key servers)">theHarvester
+                                    <span style="font-size:0.6em;">is a tool for gathering e-mail accounts, subdomain
+                                        names, ...</span></a></li>
+                            <li><a href="https://portswigger.net/burp/" target="_blank" rel="nofollow noopener noreferrer"
+                                    title="Burp Suite, the leading toolkit for web application security testing">Burp
+                                    Suite <span style="font-size:0.6em;">the leading toolkit for web application
+                                        security testing</span></a></li>
+                            <li><a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project" target="_blank"
+                                    rel="nofollow noopener noreferrer" title="OWASP Zed Attack Proxy Project">The OWASP
+                                    Zed Attack Proxy (ZAP) <span style="font-size:0.6em;">is one of the world’s most
+                                        popular free security tools</span></a></li>
+                            <li><a href="https://cirt.net/Nikto2" target="_blank" rel="nofollow noopener noreferrer"
+                                    title="Nikto2 | CIRT.net">Nikto <span style="font-size:0.6em;">is an Open Source
+                                        (GPL) web server scanner</span></a></li>
+                            <li><a href="https://nmap.org/" target="_blank" rel="nofollow noopener noreferrer" title="Nmap: the Network Mapper - Free Security Scanner">Nmap
+                                    <span style="font-size:0.6em;">("Network Mapper") is a free and open source
+                                        (license) utility for network discovery and security auditing</span></a></li>
+                            <li><a href="https://paterva.com/web7/" target="_blank" rel="nofollow noopener noreferrer"
+                                    title="Welcome to Paterva's home page. Find out more about Maltego here">Maltego
+                                    <span style="font-size:0.6em;">est un outil qui permet de récupérer et agréger des
+                                        informations dans le but de faire du footprinting</span></a></li>
+                            <li><a href="http://tools.kali.org/information-gathering/fierce" target="_blank" rel="nofollow noopener noreferrer"
+                                    title="Fierce | Penetration Testing Tools">Fierce <span style="font-size:0.6em;">is
+                                        a PERL script that quickly scans domains using several tactics</span></a></li>
+                            <li><a href="http://whatweb.net/" target="_blank" rel="nofollow noopener noreferrer" title="WhatWeb - Next generation web scanner">WhatWeb
+                                    <span style="font-size:0.6em;">recognises web technologies including content
+                                        management systems (CMS), ...</span></a></li>
+                            <li><a href="http://sectools.org/tool/hydra/" target="_blank" rel="nofollow noopener noreferrer"
+                                    title="THC Hydra &ndash; SecTools Top Network Security Tools">Hydra<span style="font-size:0.6em;">,
+                                        tool for brute forcing crack a remote authentication service</span></a></li>
+                            <li>...</li>
+                        </ul>
+                        <p class="red">À utiliser strictement sur vos propres sites et idéalement en local.</p>
+                    </div>
+                </section>
+                <!-- 3.10 Penetration test -->
+            </section>
+            <!-- 3. Comment sécuriser son site web -->
+
+            <section>
+                <!-- 4. Comment identifier des hacks sur son site web -->
+                <section id="identifier">
+                    <!-- 4. Comment identifier des hacks sur son site web -->
+                    <h2>4. Comment identifier des hacks sur son site web</h2>
+                    <p><em>Est-ce que mon site a été hacké ? Est-il propre ? Comment m'en assurer ?</em>&nbsp;: <a href="https://slides.aesecure.com/hacked/index.html"
+                            target="_blank" rel="noopener noreferrer">https://slides.aesecure.com/hacked/index.html</a></p>
+                </section>
+                <section id="identifier_4-1-google">
+                    <!-- 4.1 Google SERPs -->
+                    <h2>4.1. Google SERPs</h2>
+                    <img src="img/blank.png" alt="serp" data-class="img_left" data-src="img/serp.png" height="350" />
+                    <p style="font-size:0.8em;">De temps en temps, faites une recherche sur votre propre site, voyez si
+                        aucune nouvelle page est référencée et qui ne serait pas de vous.</p>
+                    <code>* site:monsite.com</code>
+                </section>
+                <section id="identifier_4-2-mention">
+                    <!-- 4.2 Mention (veille) -->
+                    <h2>4.2 Mention (veille)</h2>
+                    <img src="img/blank.png" alt="mention" data-class="img_left" data-src="img/mention.png" height="400" />
+                    <p style="font-size:0.8em;">En utilisant un logiciel de veille, on peut être averti par email. Ici
+                        <a href="https://mention.com/fr/" target="_blank" rel="nofollow noopener noreferrer">mention.com</a>
+                        avec une veille sur un mot qui est, ici, un dossier du
+                        site.
+                    </p>
+                </section>
+                <section id="identifier_4-3_QuickScan">
+                    <!-- 4.3 aeSecure QuickScan -->
+                    <h2>4.3. aeSecure QuickScan ?</h2>
+                    <p>aeSecure QuickScan est un <em>scanner gratuit supportant nativement 22 CMS</em>.</p>
+                    <hr />
+                    <div style="font-size:smaller;">
+                        <ul>
+                            <li class="fragment">Scanner php universel gratuit qui permet de détecter rapidement des
+                                fichiers suspects sur son site et de vous permettre de les supprimer.</li>
+                            <li class="fragment">Concept de <em>liste blanche</em> et de liste noire pour optimiser le
+                                scan.</li>
+                            <li class="fragment"><a href="http://translate.aesecure.com/collaboration/project?id=66085"
+                                    target="_blank" rel="nofollow noopener noreferrer">Disponible en Français,
+                                    Néerlandais et Anglais.</a></li>
+                        </ul>
+                    </div>
+                    <br />
+                    <div class="green">
+                        <a href="https://www.aesecure.com/fr/blog/aesecure-quickscan.html" target="_blank" title="aeSecure QuickScan est un scanner gratuit pour sites web supportant nativement 22 CMS">aeSecure's
+                            QuickScan</a>
+                        <hr />
+                        <a href="https://www.aesecure.com/_demo/aesecure_quickscan.php" target="_blank">Démo en ligne</a>
+                    </div>
+                </section>
+                <section id="identifier_4-4-scanners">
+                    <!-- 4.4 D'autres scanners -->
+                    <h2>4.4 D'autres scanners</h2>
+                    <p>À côté d'aeSecure QuickScan, vous avez d'autres outils :</p>
+                    <ul>
+                        <li><a href="https://github.com/btoplak/Joomla-Anti-Malware-Scan-Script--JAMSS-" title="JAMSS - a Joomla! and WordPress Security script that automatically scans the Joomla! or Wordpress files for some patterns and fingerprints of malware, trojans or other injections into PHP code"
+                                target="_blank" rel="noopener noreferrer noindex">https://github.com/btoplak/Joomla-Anti-Malware-Scan-Script--JAMSS-</a></li>
+                        <li><a href="http://www.clamav.net/" title="ClamavNet" target="_blank" rel="noopener noreferrer noindex">http://www.clamav.net/</a></li>
+                        <li><a href="http://tools.kali.org/web-applications/joomscan" title="joomscan | Penetration Testing Tools"
+                                target="_blank" rel="noopener noreferrer noindex">http://tools.kali.org/web-applications/joomscan</a></li>
+                    </ul>
+                </section>
+                <section id="identifier_4-5-dates">
+                    <!-- 4.5 Se fier aux dates ? -->
+                    <h2>4.5. Se fier aux dates ?</h2>
+                    <img src="img/blank.png" alt="dates" data-class="img_left" data-src="img/dates.png" />
+                    <p><small>En php, l’instruction <span class="red">touch()</span> permet de réinitialiser la date de
+                            dernière modification.<br />Si j’étais un pirate, mon virus détecterait d’abord la date
+                            courante du fichier pour injecter mon virus et rétablir cette date quand l’injection a été
+                            faite.<br />Toutefois, avoir dans un dossier de nombreux fichiers avec une même date et un
+                            intrus, oui, il est utile d’aller voir ce que contient l’intrus. </small></p>
+                </section>
+                <section id="identifier_4-6-fichiers">
+                    <!-- 4.6. Certains fichiers à surveiller -->
+                    <h2>4.6. Certains fichiers à surveiller</h2>
+                    <p>Les fichiers ci-dessous sont assez régulièrement hackés&nbsp;:</p>
+                    <ul>
+                        <li><code>/administrator/includes/defines.php</code>,</li>
+                        <li><code>/includes/defines.php</code>,</li>
+                        <li><code>/templates/…/index.php</code> (ceci pour tous les templates)</li>
+                    </ul>
+                </section>
+                <section id="identifier_4-7-x-httpd-php">
+                    <!-- 4.7. Exemples -->
+                    <h2>4.7. Exemples</h2>
+                    <h3>SetHandler application/x-httpd-php</h3>
+                    <small>Lorsque vous avez un fichier .htaccess dans un dossier, quel que soit le dossier, il est
+                        utile de l’éditer pour prendre connaissance de son contenu. Un tel fichier peut p.ex. rendre
+                        exécutable … une image.</small>
+                    <pre><code data-trim>
+&lt;FilesMatch "bananas_1.jpg"&gt;
+SetHandler application/x-httpd-php
+&lt;/FilesMatch&gt;
+                  </code></pre>
+                    <small>Ces trois lignes vont indiquer à Apache que le fichier bananas_1.jpg, malgré son extension,
+                        doit être considéré comme un script php&nbsp;: le pirate pourra donc accéder à
+                        http://votresite/.../bananas_1.jpg afin de lancer le script.</small>
+                    <p class="red">Un fichier .htaccess où vous trouvez un SetHandler application/x-httpd-php est donc
+                        suspect.</p>
+                </section>
+                <!-- 4.6 Exemples -->
+                <section data-state="img-left" data-background="img/gif-php.png" id="identifier_4-7-gif89a">
+                    <div class="warning">
+                        <h2>4.7. Exemples</h2>
+                        <h3>Un script caché derrière une ... GIF</h3>
+                    </div>
+                </section>
+                <section data-state="img-left" data-background="img/jpg-ssh.png" id="identifier_4-7-jpg">
+                    <div class="warning">
+                        <h2>4.7. Exemples</h2>
+                        <h3>Une image jpg... Ben non</h3>
+                    </div>
+                </section>
+                <section id="identifier_4-7-false_plugin">
+                    <h2>4.7. Exemples</h2>
+                    <h3>Un faux plugin Joomla!®</h3>
+                    <img src="img/blank.png" alt="plugin" data-src="img/false_plugin.png" />
+                    <div><small>Déclaration d’une classe bidon dont le constructeur va récupérer un cookie initialisé
+                            par le pirate.</small></div>
+                    <aside class="notes">
+                        $jq est très probablement initialisé à base64_decode. $option à preg_replace et $au serait le
+                        code php pour l’attaque. La ligne $option("/438/e… est celle qui lance l’attaque.
+                    </aside>
+                </section>
+                <section id="identifier_4-7-false_robots_txt">
+                    <h2>4.7. Exemples</h2>
+                    <h3>Faux fichier robots.txt</h3>
+                    <img src="img/blank.png" alt="robots.txt" data-src="img/false_robots_txt.png" />
+                    <div><small>Le fichier robots.txt est présumé se trouver dans le dossier racine. Si vous le trouvez
+                            dans un autre dossier, c’est un bon candidat à "allons voir ce qu’il contient".</small></div>
+                    <aside class="notes">Un tel fichier est rendu exécutable grâce à trois lignes de code dans un
+                        fichier .htaccess; pas forcément dans le même dossier.</aside>
+                </section>
+                <section data-state="img-left" data-background="img/false_404.png" id="identifier_4-7-false_404">
+                    <div class="warning">
+                        <h2>4.7. Exemples</h2>
+                        <h3>Une fausse page 404</h3>
+                    </div>
+                </section>
+                <section data-state="img-left" data-background="img/preg_replace.png" id="identifier_4-7-preg_replace">
+                    <div class="warning">
+                        <h2>4.7. Exemples</h2>
+                        <h3>Un dernier exemple...</h3>
+                    </div>
+                </section>
+                <!-- 4.7 Exemples -->
+            </section>
+            <!-- 4. Comment identifier des hacks sur son site web -->
+
+            <section>
+                <!-- 5. Nettoyer un site hacké -->
+                <section id="nettoyer">
+                    <!-- 5. Nettoyer un site hacké -->
+                    <h2>5. Nettoyer un site hacké</h2>
+                    <p><em>Votre site a été hacké, que faire ?</em> pour apprendre à le nettoyer par vous-même&nbsp;:
+                        <a href="https://www.aesecure.com/fr/blog/site-hacke.html" target="_blank" rel="noopener noreferrer">https://www.aesecure.com/fr/blog/site-hacke.html</a></p>
+                    <div class="green">Consultez aussi les slides&nbsp;: <a href="https://slides.aesecure.com/hacked/index.html#/nettoyer-intro">Supprimer
+                            la menace</a></div>
+                </section>
+                <section id="nettoyer_5-1_backup_dispo">
+                    <!-- 5.1 todo -->
+                    <h2>5.1. Vous avez un backup sain et récent</h2>
+                    <ol style="font-size:0.8em;">
+                        <li class="fragment">Prenez un backup de votre site vérolé, téléchargez-le en local,</li>
+                        <li class="fragment">Supprimez votre site et restaurez-le votre backup qui était sain,</li>
+                        <li class="fragment"><em>Sécurisez votre site</em> (nettoyez, mettez à jour, installez une
+                            sécurisation, ...),</li>
+                        <li class="fragment">Prenez un backup du site ayant été sécurisé</li>
+                    </ol>
+                </section>
+                <section id="nettoyer_5-2_aucun_backup">
+                    <!-- 5.2 Vous n'avez pas de backup sain et récent -->
+                    <h2>5.2. Vous n'avez pas de backup sain et récent</h2>
+                    <p>Voyez avec votre hébergeur, puisqu'il est sérieux, il a pris des backups automatisés pour vous
+                        (non? quittez-le sans délai!)</p>
+                    <p>Nettoyer un site "à la main" est une opération compliquée, requérant du temps et de la
+                        méthodologie.</p>
+                </section>
+                <section id="nettoyer_5-3_a_la_main">
+                    <!-- 5.3. Nettoyer à la main -->
+                    <h2>5.3. Nettoyer à la main</h2>
+                    <div style="font-size:0.8em;">
+                        <ol>
+                            <li class="fragment fade-up odd">Prenez un backup de votre site vérolé, téléchargez-le en
+                                local,</li>
+                            <li class="fragment fade-up even">En local,
+                                <ol>
+                                    <li class="fragment fade-up odd">restaurez une copie du site en localhost (<span
+                                            class="danger blink">n'affichez pas le site!!!</span>),</li>
+                                    <li class="fragment fade-up even">supprimez tout sauf le dossier /images et /media
+                                        et d'éventuels dossiers n'appartenant pas à Joomla!® et scanner ces dossiers (à
+                                        la main ou avec QuickScan),</li>
+                                    <li class="fragment fade-up odd">réinstallez une version propre de Joomla, des
+                                        composants qui étaient utilisés, templates, modules, plugins, ...,</li>
+                                    <li class="fragment fade-up even">sécurisez le site,</li>
+                                    <li class="fragment fade-up odd">testez votre site pour voir s'il est fonctionnel</li>
+                                </ol>
+                            </li>
+                        </ol>
+                        <div class="fragment fade-in">
+                            <p class="fragment fade-out green">Cette méthode est longue et requiert que vous ayez
+                                encore une version de tous les logiciels payants que vous aviez sur ce site.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <!-- 5.3. Nettoyer à la main -->
+
+            <section>
+                <!-- 6. Être éveillé -->
+                <section id="eveil">
+                    <!-- 6. Être éveillé -->
+                    <h2>6. Être éveillé</h2>
+                </section>
+                <section id="eveil_6-1_conseils">
+                    <h2>6.1. Gardez votre site propre</h2>
+                    <ol>
+                        <li class="fragment fade-up fade-left">N'installez pas n'importe quoi sur votre site de
+                            production, <em>les sites de test, en localhost, servent à ça</em>,</li>
+                        <li class="fragment  fade-bottom">Bannissez, <em>même "juste pour voir"</em>, les logiciels
+                            téléchargés de sources douteuses,</li>
+                        <li class="fragment fade-right">Vous donnez un accès admin à quelqu'un pour du support ? <em>Supprimez
+                                l'accès dès que la tâche est finie; changez vos accès FTP et base de données</em>,</li>
+                        <li class="fragment fade-top">...</li>
+                    </ol>
+                </section>
+                <!-- 6.1. Gardez votre site propre -->
+                <section id="eveil_6-2_ecoute">
+                    <h2>6.2. Restez à l'écoute</h2>
+                    <ul style="font-style:italic;">
+                        <li><em><a href="https://developer.joomla.org/security-centre.html" title="Joomla! Developer Network | Security Announcements"
+                                    target="_blank" rel="noopener noreferrer noindex">Joomla! Developer Network |
+                                    Security Announcements</a></em></li>
+                        <li>Un doute ?, posez votre question sur un forum francophone (<a href="http://forum.joomla.fr/forumdisplay.php?248-S%C3%A9curit%C3%A9"
+                                title="Joomla!Fr - le forum | Sécurité" target="_blank" rel="noopener noreferrer noindex">joomla.fr</a>,
+                            <a href="http://www.aide-joomla.com/forum/securite-joomla" target="_blank" rel="noopener noreferrer noindex"
+                                title="Aide-Joomla | Sécurité Joomla! - Forum">aide-joomla.com</a> ou <a href="http://cinnk.com/forum/securite"
+                                target="_blank" rel="noopener noreferrer noindex" title="CINNK le Forum | Support Joomla!">cinnk.com</a>)</li>
+                        <li>Sur Facebook, suivi un groupe Joomla!, recherchez les groupes "<em>joomla fr</em>", "<em>aide-joomla</em>",
+                            "<em>JUG</em>" ou "<em>Joomla! User Group</em>" <span style="font-size:0.6em;font-style:italic;">un/une
+                                JUG est une association d'utilisateurs de Joomla!, peut-être en existe-t-il une dans
+                                votre ville</span></li>
+                        <li>Et si vous êtes sur Twitter, suivez les mêmes ;-)</li>
+                    </ul>
+                </section>
+                <!-- 6.2. Restez à l'écoute -->
+                <section id="eveil_6-3_utilisateurs">
+                    <h2>6.3. Protégez vos visiteurs</h2>
+                    <div style="font-size:0.8em;">
+                        <p><strong class="orange">Sans tomber dans la paranoïa</strong>, songez au pistage probable de
+                            vos visiteurs&nbsp;:</p>
+                        <ul style="font-style:italic;">
+                            <li>Faut-il vraiment ce bouton Google+, Facebook et autres liens de partage sociaux sur
+                                toutes vos pages ? (<a href="https://framablog.org/category/degooglisons-internet/apple-google-microsoft/"
+                                    title="G.A.F.A.M. &#8211; Framablog" target="_blank" rel="noopener noreferrer noindex">info
+                                    GAFAM</a>)</li>
+                            <li>Au final, vous ne consultez jamais vos stats Google Analytics =&gt; supprimez le script
+                                GAnalytics</li>
+                            <li>Évitez les services tiers comme Disqus <em>qui pistent vos visiteurs sans leur
+                                    autorisation</em> (<a href="http://chrislema.com/killed-disqus-commenting/" target="_blank"
+                                    rel="noopener noreferrer noindex" title="Why I killed Disqus Commenting on my site">info</a>)</li>
+                            <li>...</li>
+                        </ul>
+                    </div>
+                    <!-- 6.3. Protégez vos visiteurs -->
+                </section>
+
+            </section>
+            <!-- 6. Être éveillé -->
+
+            <section id="contact">
+                <!-- contact -->
+                <h2>Merci pour votre attention!</h2>
+                <div>
+                    <ul>
+                        <li>Blog: <a href="https://www.aesecure.com">aesecure.com</a></li>
+                        <li>Twitter: <a href="https://twitter.com/aesecure" target="_blank" rel="nofollow noopener noreferrer">@aeSecure</a></li>
+                        <li>Facebook: <a href="https://www.facebook.com/aesecure" target="_blank" rel="nofollow noopener noreferrer">aeSecure</a></li>
+                        <li>Slides: <a href="https://slides.aesecure.com" target="_blank" rel="noopener noreferrer">slides.aesecure.com</a></li>
+                        <li>Email: <span>christophe AT aesecure.com</span></li>
+                    </ul>
+                </div>
+                <img src="img/blank.png" data-src="img/logo.png" alt="aeSecure Logo" height="200" style="border:none;box-shadow:none;" />
+                <div style="margin-top:45px;font-size:0.4em;">Slideshow: <a target="_blank" rel="nofollow noopener noreferrer"
+                        href="https://github.com/hakimel/reveal.js/">Reveal.js</a> (<a target="_blank" rel="nofollow noopener noreferrer"
+                        href="http://twitter.com/hakimel">@hakimel</a>)</div>
+            </section>
+
+        </div>
+        <!-- slides -->
+
+    </div>
+    <!-- reveal -->
+
+    <div id="logo">
+        <a href="https://www.aesecure.com" target="_blank" rel="noopener noreferrer" title="aeSecure, optimisation et sécurisation de vos sites web Apache"><img
+                src="img/blank.png" data-src="img/small_logo.png" alt="aeSecure, optimisation et sécurisation de vos sites web Apache" /></a>
+    </div>
+    <!-- logo -->
+
+    <!--<div id="top_right">
+         <a href="http://cinnk.com" target="_blank" rel="noopener noreferrer" title="CINNK | Formation Joomla! - Maintenance, Tutoriels et documentations"><img style="padding-top:500px;" src="img/cinnk.gif" alt="CINNK | Formation Joomla! - Maintenance, Tutoriels et documentations" width="142"/></a>
+      </div>-->
+
+    <aside class="controls">
+        <a class="left" href="#">&#x25C4;</a>
+        <a class="right" href="#">&#x25BA;</a>
+        <a class="up" href="#">&#x25B2;</a>
+        <a class="down" href="#">&#x25BC;</a>
+    </aside>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+
+            // Push each slide change to the browser history
+            history: true,
+
+            // Display controls in the bottom right corner
+            controls: true,
+
+            // Display a presentation progress bar
+            progress: true,
+
+            // Display the page number of the current slide
+            slideNumber: true,
+
+            // Enable slide navigation via mouse wheel
+            mouseWheel: true,
+
+            // Transition style
+            transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+            // Transition style for full page slide backgrounds
+            backgroundTransition: 'concave', // none/fade/slide/convex/concave/zoom
+
+            // Parallax background image
+            //parallaxBackgroundImage: 'img/background.png',
+            //parallaxBackgroundSize: '1917px 1080px',
+
+            // Number of pixels to move the parallax background per slide
+            // - Calculated automatically unless specified
+            // - Set to 0 to disable movement along an axis
+            //parallaxBackgroundHorizontal: 0,
+            //parallaxBackgroundVertical: 0,
+
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [
+
+                {
+                    src: 'lib/js/classList.js',
+                    condition: function () {
+                        return !document.body.classList;
+                    }
+                },
+                {
+                    src: 'plugin/zoom-js/zoom.js',
+                    async: true,
+                    condition: function () {
+                        return !!document.body.classList;
+                    }
+                },
+                {
+                    src: 'plugin/notes/notes.js',
+                    async: true,
+                    condition: function () {
+                        return !!document.body.classList;
+                    }
+                },
+
+                {
+                    src: 'plugin/markdown/marked.js'
+                },
+                {
+                    src: 'plugin/markdown/markdown.js'
+                },
+                {
+                    src: 'plugin/notes/notes.js',
+                    async: true
+                },
+                {
+                    src: 'plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                }
+            ]
+        });
+
+        Reveal.addEventListener('ready', function (event) {
+            var isMobileDevice = /(iphone|ipod|ipad|android)/gi.test(navigator.userAgent);
+
+            if (!isMobileDevice) {
+                document.getElementById('logo').style.display = 'inline';
+                document.getElementById('menu').style.display = 'inline';
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
